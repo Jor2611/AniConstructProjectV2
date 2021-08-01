@@ -4,15 +4,15 @@ var $header = $('.header');
 $window.scroll(onScroll);
 
 function onScroll() {
-  if ($window.scrollTop()) {
-    $header.addClass('is-active');
-  } else {
-    $header.removeClass('is-active');
-  }
+	if ($window.scrollTop()) {
+		$header.addClass('is-active');
+	} else {
+		$header.removeClass('is-active');
+	}
 }
 
-$(function(){
-	$('.slider_f').each(function(){
+$(function () {
+	$('.slider_f').each(function () {
 		var $slide = $('.sld_f', this);
 		var $prev = $('.arrow_l', this);
 		var $next = $('.arrow_r', this);
@@ -21,47 +21,47 @@ $(function(){
 
 		function movePrev() {
 			var index = $slide.filter('.active').index();
-			if(index == 0){
+			if (index == 0) {
 				index = $slide.length
 			}
-			$slide.eq(index-1).addClass('active').siblings().removeClass('active');
+			$slide.eq(index - 1).addClass('active').siblings().removeClass('active');
 		}
 
 		function moveNext() {
 			var index = $slide.filter('.active').index();
-			if(index == $slide.length-1){
+			if (index == $slide.length - 1) {
 				index = -1;
 			}
-			$slide.eq(index+1).addClass('active').siblings().removeClass('active');
+			$slide.eq(index + 1).addClass('active').siblings().removeClass('active');
 		}
 
-		$prev.on("click", function() {
+		$prev.on("click", function () {
 			movePrev();
 		});
 
-		$next.on("click", function() {
+		$next.on("click", function () {
 			moveNext();
 		});
 	})
 
 })
 
-$(function(){
+$(function () {
 	// 	init scrollmagic
 	var controller = new ScrollMagic.Controller();
 
 	// 	loop through slides
-	$(".slider_f").each( function () {
+	$(".slider_f").each(function () {
 
 		var bg = $(this).find(".slider");
 
 		// Add tweenmax for backgroundParallax
 		var parallax = TweenMax
-		.from( bg, 1, {
-			y: '-40%',
-			ease: Power0.easeNone,
-  			// scale: 1.2
-		});
+			.from(bg, 1, {
+				y: '-40%',
+				ease: Power0.easeNone,
+				// scale: 1.2
+			});
 
 		// Create scrollmagic scene
 		var parallaxScene = new ScrollMagic.Scene({
@@ -69,8 +69,8 @@ $(function(){
 			triggerHook: 1,
 			duration: '200%',
 		})
-		.setTween( parallax )
-		.addTo(controller);
+			.setTween(parallax)
+			.addTo(controller);
 
 	});
 
@@ -93,22 +93,22 @@ $(document).ready(function () {
 			el: '.swiper-pagination',
 			clickable: true,
 			renderBullet: function (index, className) {
-			  return '<span class="' + className + '"></span>';
+				return '<span class="' + className + '"></span>';
 			},
-		 },
-		 breakpoints: {
+		},
+		breakpoints: {
 			0: {
-			  slidesPerView: 1,
-			  spaceBetween: 30,
+				slidesPerView: 1,
+				spaceBetween: 30,
 			},
 			768: {
-			  slidesPerView: 2,
-			  spaceBetween: 30,
+				slidesPerView: 2,
+				spaceBetween: 30,
 			},
 			1200: {
 				slidesPerView: 3,
 				spaceBetween: 30,
-			  },
+			},
 		}
 	});
 });
@@ -117,7 +117,7 @@ $(document).ready(function () {
 */
 var btn = $('#button_scroll');
 
-$(window).scroll(function() {
+$(window).scroll(function () {
 	if ($(window).scrollTop() > 300) {
 		btn.addClass('show');
 	} else {
@@ -125,17 +125,17 @@ $(window).scroll(function() {
 	}
 });
 
-btn.on('click', function(e) {
+btn.on('click', function (e) {
 	e.preventDefault();
-	$('html, body').animate({scrollTop:0}, '300');
+	$('html, body').animate({ scrollTop: 0 }, '300');
 });
 /**
 * Animation
 */
-$(".rn_surface").imagesLoaded().always(function() {
-	setTimeout(function() {
+$(".rn_surface").imagesLoaded().always(function () {
+	setTimeout(function () {
 		var smc = new ScrollMagic.Controller;
-		$(".rn_surface").each(function() {
+		$(".rn_surface").each(function () {
 			new ScrollMagic.Scene({
 				triggerElement: this,
 				triggerHook: 0.9,
@@ -147,7 +147,7 @@ $(".rn_surface").imagesLoaded().always(function() {
 /**
 * Preloader
 */
-$(window).on('load', function() {
+$(window).on('load', function () {
 	rnPrealoaderSetup();
 });
 function rnPrealoaderSetup() {
@@ -155,10 +155,10 @@ function rnPrealoaderSetup() {
 	var isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	//- $('html, body').animate({ scrollTop: $('body').offset().top﻿ }, 'slow'); // Animation scroll
 	if (!isPhone) {
-		setTimeout(function() {
+		setTimeout(function () {
 			rnPre.addClass('rn-preloaded');
 		}, 100);
-		setTimeout(function() {
+		setTimeout(function () {
 			rnPre.remove();
 		}, 1500);
 
@@ -184,14 +184,14 @@ $('.cocoen').cocoen();
 /**
 * Lax
 */
-window.onload = function() {
+window.onload = function () {
 	lax.setup({
 		breakpoints: { small: 0, large: 992 }
 	}) // init
 	const updateLax = () => {
 		lax.update(window.scrollY)
-			window.requestAnimationFrame(updateLax)
-		}
+		window.requestAnimationFrame(updateLax)
+	}
 	window.requestAnimationFrame(updateLax)
 }
 
@@ -202,3 +202,6 @@ $('.jarallax').jarallax({
 	speed: 0.8
 });
 
+$('.grid_img').on('touch', function () {
+	console.log("Clickeddd");
+})
