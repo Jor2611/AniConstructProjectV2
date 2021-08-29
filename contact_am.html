@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8"/>
-    <title>Error</title>
+    <title>Contacts</title>
     <link rel="stylesheet" href="assets/css/libs.min.css"/>
     <link rel="stylesheet" href="assets/css/style.css"/>
     <link rel="apple-touch-icon" sizes="192x192" href="../img/favicons/favicon-192x192.png"/>
@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
 </html>
-<body id="error">
+<body id="contact">
   <div class="head_t">
     <div id="button_scroll"></div>
     <div id="rn-preloader-wrap">
@@ -37,27 +37,42 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation"><span class="fas fa-bars fa-1x"></span></button>
           <div class="menu_b collapse navbar-collapse" id="navbarToggleExternalContent">
             <div class="navbar-nav">
-              <li class="undefined"><a href="index.html">Home</a></li>
-              <li class="undefined"><a href="project.html">Projects</a></li>
-              <li class="undefined"><a href="services.html">Services</a></li>
-              <li class="undefined"><a href="contact.html">Contact</a></li>
+              <li class="undefined"><a href="index_am.html">Գլխավոր</a></li>
+              <li class="undefined"><a href="services_am.html">Ծառայություններ</a></li>
+              <li class="undefined"><a href="project_am.html">Նախագծեր</a></li>
+              <li class="active"><a href="contact_am.html">Կապ</a></li>
             </div>
             <div class="other-nav">
-              <li class="other_nav"></li>
+                  <li class="other_nav" onclick="setLocale(&quot;en&quot;)"><a href="contact_en.html">EN</a>
+                  </li>
+                  <li class="other_nav" onclick="setLocale(&quot;ru&quot;)"><a href="contact_ru.html">RU</a>
+                  </li>
             </div>
           </div>
     </nav>
+    <div class="title_head jarallax" style="background-image: url('assets/img/backgrounds/21.jpg">
+          <div class="container">
+            <div class="row flex-column align-items-center">
+              <h2>Կապ</h2>
+            </div>
+          </div>
+      <p>Մենք միշտ ուրախ ենք լինել կապի մեջ մեր հաճախորդների հետ</p>
+    </div>
   </div>
-  <div class="container">
-    <div class="error">
-      <h3>404</h3>
-      <p>Page not found</p><a class="button_small" href="index.html">Back to Home</a>
+  <div class="content container">
+    <div class="form_contact col-12 col-lg-12">
+      <h2>Տվյալներ</h2>
+      <p>Մեզ համար լավագույն գնահատականը ձեզ հետ աշխատելն է</p>
+      <p class="contact_item"><i class="fas fa-map-marker-alt"><span>Երևան</span></i></p>
+      <p class="contact_item"><i class="fas fa-phone"><span>Vib. +37493950070</span></i></p>
+      <p class="contact_item"><i class="fas fa-envelope"><span>artproject.consulting@gmail.com</span></i></p>
+      <p class="contact_item"><i class="fab fa-facebook-f"><span><a class="contact_item_link" href="https://www.facebook.com/aniconstructproject/">ԱնիՇինՆախագիծ</a></span></i></p>
     </div>
   </div>
   <footer>
     <div class="footer_buttom col-12">
       <div class="container rev_flex">
-        <p>© 2021 Envato Pty Ltd. Trademarks and brands are the property of their respective owners. Developed by<a href="www.google.com"> OneManDev </a></p>
+        <p>© 2021 Envato Pty Ltd. Trademarks and brands are the property of their respective owners. </p>
       </div>
     </div>
   </footer>

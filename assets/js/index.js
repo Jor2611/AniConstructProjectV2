@@ -149,7 +149,57 @@ $(".rn_surface").imagesLoaded().always(function () {
 */
 $(window).on('load', function () {
 	rnPrealoaderSetup();
+	var existingLocation = window.location.pathname.split('/').pop();
+	var toLocate = getLocale();
+	if (existingLocation !== toLocate) {
+		window.location.href = toLocate;
+	}
 });
+
+function getLocale() {
+	var locale = localStorage.getItem("locale") || 'en';
+
+	var availableLocales = ['en', 'ru', 'am'];
+
+	if (!availableLocales.some(item => item === locale)) {
+		localStorage.clear();
+		locale = 'en';
+	};
+
+	var currentLocation = getCurrentLocation();
+
+	var navigateToLocation = `${currentLocation}_${locale}.html`;
+
+	return navigateToLocation;
+}
+
+function getCurrentLocation() {
+	var pathname = window.location.pathname;
+	pathname = pathname.split('/').pop();
+
+	var baseName;
+	if (pathname === "") baseName = "index";
+	else {
+		var pathnameWithoutExtention = pathname.split(".").shift();
+		baseName = pathnameWithoutExtention.split("_")[0];
+
+		var availableBaseNames = ['contact', 'index', 'project', 'services', '404'];
+
+		if (availableBaseNames.indexOf(baseName) === -1) baseName === '404';
+	}
+
+	return baseName;
+}
+
+function setLocale(value) {
+	console.log(value)
+	var availableLocales = ['en', 'ru', 'am'];
+
+	if (!availableLocales.some(item => item === value)) value = 'en';
+
+	localStorage.setItem('locale', value);
+}
+
 function rnPrealoaderSetup() {
 	var rnPre = $('#rn-preloader-wrap');
 	var isPhone = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;

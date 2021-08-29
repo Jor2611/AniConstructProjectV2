@@ -6913,7 +6913,7 @@ a, a:hover {
 }
 
 .slider_f .slide_t .text_s h2 {
-  font-size: 110px;
+  font-size: 77px;
   text-transform: uppercase;
   font-weight: 700;
   margin: 0px;
@@ -9532,12 +9532,12 @@ footer .f_m.latest_posts_widget .min_img_w {
   font-size: 18px;
 }
 
-#contact .contact_item_link {
-  color: #FFC006;
+#contact .contact_item span, #contact .contact_item a {
+  padding-left: 10px;
 }
 
-#contact span, #contact a {
-  padding-left: 10px;
+#contact .contact_item_link {
+  color: #FFC006;
 }
 
 /* - Error */
@@ -9657,7 +9657,7 @@ body {
     font-size: 10px;
   }
   .slider_f .slide_t .text_s h2 {
-    font-size: 36px;
+    font-size: 30px;
     line-height: 44px;
     width: auto;
   }
@@ -9690,6 +9690,7 @@ body {
   }
   .left_menu .menu_b .navbar-nav, .left_menu .menu_b .other-nav, .navbar .menu_b .navbar-nav, .navbar .menu_b .other-nav {
     flex-direction: column;
+    border-top: 0.5px solid grey;
     background: #000;
     position: relative;
     width: 100%;
@@ -10121,7 +10122,7 @@ body {
     padding-top: 15px;
   }
   .title_head h2 {
-    font-size: 32px !important;
+    font-size: 27px !important;
   }
 }
 
