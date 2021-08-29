@@ -192,7 +192,6 @@ function getCurrentLocation() {
 }
 
 function setLocale(value) {
-	console.log(value)
 	var availableLocales = ['en', 'ru', 'am'];
 
 	if (!availableLocales.some(item => item === value)) value = 'en';
@@ -253,5 +252,5 @@ $('.jarallax').jarallax({
 });
 
 $('.grid_img').on('touch', function () {
-	console.log("Clickeddd");
+	console.log("");
 })
